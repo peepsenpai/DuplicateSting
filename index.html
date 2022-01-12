@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+    <style>
+        .label{
+            margin-bottom: 6px;
+        }
+        .input {
+            padding: 10px;
+         }
+         button{
+             cursor: pointer;
+             padding: 10px;
+             letter-spacing: 1px;
+         }
+    </style>
+</head>
+
+<body>
+    <div class="label">
+        <label for="input">Enter String without 'space'; if you put a 'space' it will consider it as a character</label>
+    </div>
+    <input type="text" class="input" id="input" placeholder="Enter Text Here">
+    <button id="btn">Click</button>
+
+    <div class="output">
+        Your output is : <span class="span-out"></span>
+    </div>
+    <div id="msgbox">
+
+    </div>
+    
+    <script>
+       let input = document.getElementById('input'),
+       btn = document.getElementById('btn'),
+       span = document.querySelector('.span-out'),
+       msgbox = document.getElementById('msgbox');
+
+
+       btn.addEventListener('click',()=>{
+
+           let val = input.value;
+           let strArr = val.split('');
+
+           let unique = [];
+           strArr.forEach((e)=>{
+               if(!unique.includes(e)){
+                   unique.push(e);
+               }
+           })
+           
+
+        //    console.log(unique);
+        let output = unique.length;
+        span.innerText = output;
+           
+       })
+
+
+    </script>
+</body>
+
+</html>
